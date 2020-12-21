@@ -12,7 +12,7 @@ void start_timer(void)
     struct itimerspec value;
     value.it_value.tv_sec = 2;
     value.it_value.tv_nsec = 0;
-    value.it_interval.tv_sec = 2;
+    value.it_interval.tv_sec = 8;
     value.it_interval.tv_nsec = 0;
 
     timer_create (CLOCK_REALTIME,NULL,&gTimerid);
@@ -37,7 +37,7 @@ int main(int ac, char**av)
 
 }
 
-//task 1
+//Task 4
 
 void executioninAction(void)
 {
@@ -51,7 +51,7 @@ void executioninAction(void)
     usleep(4000); //4ms. in reality usleep is blocking so it goes to wait state instead of run so not good.
     clock_gettime(CLOCK_REALTIME,&tend);
 
-    printf("Task 1: pid %d",getpid());
+    printf("Task 4: pid %d",getpid());
     printf("Executed for: %ld ns \n",
     (
     
@@ -63,7 +63,7 @@ void executioninAction(void)
     );
 }
 
-//task 1 end
+//Task 4 end
 
 
 
